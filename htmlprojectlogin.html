@@ -1,0 +1,244 @@
+<html></html>
+  <head>
+    <title>html project</title>
+    <style>
+        * {
+            margin: 0 0 0 0;
+            padding: 0;
+
+        }
+                                                            /* <<<<<<<<<<<<<   NAVBAR PART   >>>>>>>>>>>> */
+        ol {
+            margin-left: 20px;
+        }
+          
+        .btn {
+            margin-right: 280px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .btn:hover {
+            background-color: skyblue;
+        }
+        .navbar {
+            position: sticky;
+            top: 0%;
+            border: 2px hidden;
+            background-color:lavender;
+            height: 100px;
+            width: 100%;
+            z-index:100;
+        }
+        .searchbar {
+            padding: 5px;
+            border-radius: 7px;
+
+        }
+        .search {
+            border: none;
+            color: aqua;
+            background-color: rgb(166, 166, 174);
+            height: 20px;
+            width: 300px;
+            border-radius: 5px;
+        }
+        .ul {
+            color: white;
+        }
+        div {
+            padding: 30px;
+        }
+        .list {
+        display: inline;
+        padding:20px;
+        text-decoration-line: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+             
+        button:hover {
+            background-color:skyblue;
+        }
+        
+        .button1 {
+            margin-left: 20px;
+            margin-right: 5px;
+            font-size:small;
+            color:black;
+            background-color:yellow;
+            font-weight: bolder;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            transition: 0.5s;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .button2{
+            font-size:large;
+            color: black;
+            background-color: yellow;
+            font-weight: bolder;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            transition:0.5s;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-left:20px;
+            padding-right:20px;
+        }
+        .oli {
+            float: right;
+            display: inline;
+            line-height: 110px;
+            padding-right: 100px;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+                                                            /* <<<<<<<<<<<<<<< FOOTER PART >>>>>>>>>>>>>>>> */
+        
+         .footer1 {
+            background-color:black;
+            display: flex;
+            color: white;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .h21 {
+            margin-top: 10px;
+            margin-left: 120px;
+            padding-bottom:10px;
+        }
+
+        .fi1 {
+           font-size:x-large;
+        }
+        .fi2{
+            font-size: larger;
+            display:block;
+            padding-top:10px;
+            color:white;
+        }
+        .fi3{
+            font-size: larger;
+            display: block;
+            padding-top:10px;
+            color:white;
+        }
+        .fi1:hover{
+      font-size:xx-large;
+      color:blue;
+        }
+        .rights{
+            background-color: black;
+            color: whitesmoke;
+        }    
+        .flex-container{
+            border:1px solid black;
+            height:450px;
+            width:350px;
+            border:hidden;
+            border-radius: 20px;
+            justify-content: center;
+            padding-top:50px;
+            background-color:ghostwhite;
+            backdrop-filter: blur(10px);
+        }
+        .flex-container:hover{
+            border:2px solid black;
+        }
+      
+            
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+    <body>
+    <nav class="navbar"><img src="images/Logo.png" alt="" height="100" width="175">
+        <ol class="oli"><span><i class="fa-solid fa-magnifying-glass"></i>&nbsp;</span> <input class="searchbar"
+          size="30px" type="text" placeholder="search Products">&nbsp;<button class="btn"
+                aria-setsize="10px">search</button>
+            <li class="list"><a href="htmlprojectlogin.html" target="_blank"><span><i
+                            class="fa-solid fa-right-to-bracket"></i></span>&nbsp;&nbsp;Login</a></li>
+            <li class="list"><a href=""><span><i
+                            class="fa-solid fa-magnifying-glass"></i></span>&nbsp;&nbsp;Explore</a></li>
+            <li class="list"><a href="" target="_blank"><span><i
+                            class="fa-solid fa-cart-shopping"></i></span>&nbsp;&nbsp;My cart</a></li>
+            <li class="list"><a href="https://www.themancompany.com/pages/our-story " target="_blank"><span><i class="fa-solid fa-address-book"></i></span>&nbsp;&nbsp;Contact us</a>
+            </li>
+        </ol>
+    </nav>
+    <br> <br><br>
+    <center>
+        <div class="flex-container">
+            <form action="index.html">
+                <img  style="margin-top:-80px;margin-left:-25px; color: white;" src="images/Logo.png" alt="" height="250" width="400">
+               <center>
+               <label for="Username"><i class="fa-solid fa-user"></i></i>&nbsp;&nbsp;&nbsp;</label>
+               <input  style="padding: 5px; border-radius: 7px; width: 220px;; font-family: monospace;" type="text" placeholder="Enter Your Username">
+               <br><br><br>
+               <label for="Password"><i class="fa-solid fa-lock"></i></i>&nbsp;&nbsp;&nbsp;</label>
+               <input style="padding: 5px; border-radius:7px; width: 220px; font-family: monospace;" type="password"placeholder="Enter Your Password">
+               <br><br><br>
+               <center>
+                <a href="">Forgot password?</a>
+               </center>
+               <br>
+              <center> <button class="button2">Login</button> </center>
+              <br>
+            <span style="display:flex;"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;don't have an account?</p>&nbsp;&nbsp;<span style="color: blue; text-decoration: underline;"><a href="htmlprojectregister.html">Register</a></span></span>
+               </center>
+    </center>
+    <br><br><br>
+   
+  </div>
+    <footer class="footer1">
+        <div>
+            <img src="images/log02.webp" alt="" height="100px" width="400px">
+            <h2 class="h21">Travel With Us</h2>
+            <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <a  class="fi1" href="https://www.instagram.com/themancompany/"><span><i class="fa-brands fa-instagram" style="color: white;"></i></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="fi1" href="https://www.facebook.com/Themancompany"><span><i class="fa-brands fa-square-facebook" style="color:white;"></i></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <a class="fi1" href="https://x.com/themancompany"><span><i class="fa-brands fa-x-twitter" style="color:white;"></i></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="fi1" href="https://api.whatsapp.com/send/?phone=919315440573&text=Hey%2C+I+need+some+help%21&type=phone_number&app_absent=0"><span><i class="fa-brands fa-square-whatsapp"style="color: white;"></i></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="fi1" href="https://www.youtube.com/channel/UCq1iHN75PEBSxaqHOkWk9pA"><span><i class="fa-brands fa-youtube" style="color:white;"></i></span></a>
+        </div>
+        <div>
+            <ul>
+                <h2>CATAGORIES</h2>
+                <div>
+                    <a class="fi3" href="">Fragrances</a> 
+                    <a class="fi3" href="">Hair care</a>
+                 <a class="fi3" href="">Body care</a>
+                  <a class="fi3" href="">Face care</a>
+                   <a class="fi3" href="">Beard care</a>
+                  
+                </div>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <h2>IMPORTANT LINKS</h2>
+                <div>
+                    <a class="fi3" href="">About us</a>
+                    <a class="fi3" href="">Contact us</a>
+                    <a class="fi3" href="">FAQs</a>
+                    <a class="fi3" href="">Privacy Policy</a>
+                    <a class="fi3" href="">Terms & Conditions</a>
+                </div>
+            </ul>
+        </div>
+    </footer>
+    <div class="rights">
+        <center>
+            <h2>@2024themancompany.All rights reserved</h2>
+            <br>
+            <hr>
+        </center>
+      </div>
+</body>
+
+</html>
