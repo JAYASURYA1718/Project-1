@@ -649,6 +649,53 @@ export default CrudPage;
         </center>
       </div>
 </body>
+  const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+// In-memory array to act like a database
+let foodItems = [];
+let nextId = 1;
+
+// CREATE
+app.post('/insert', (req, res) => {
+  const { foodName, description } = req.body;
+  const newItem = { id: nextId++, foodName, description };
+  foodItems.push(newItem);
+  res.json({ message: 'Food item added', item: newItem });
+});
+
+// READ
+app.get('/read', (req, res) => {
+  res.json(foodItems);
+});
+
+// UPDATE
+app.put('/update', (req, res) => {
+  const { id, newFoodName } = req.body;
+  const item = foodItems.find(item => item.id === id);
+  if (!item) return res.status(404).json({ message: 'Item not found' });
+  item.foodName = newFoodName;
+  res.json({ message: 'Updated', item });
+});
+
+// DELETE
+app.delete('/delete/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = foodItems.findIndex(item => item.id === id);
+  if (index === -1) return res.status(404).json({ message: 'Item not found' });
+  foodItems.splice(index, 1);
+  res.json({ message: 'Deleted' });
+});
+
+app.listen(3001, () => {
+  console.log('Server running on http://localhost:3001');
+});
+
 
 
 </html>
+
