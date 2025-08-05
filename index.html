@@ -529,6 +529,80 @@ font-size:small;
                         class="fa-solid fa-chevron-right"></i></span></a></button>
     </center>
     <br>
+  <p>import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function CrudPage() {
+  const [foodName, setFoodName] = useState('');
+  const [description, setDescription] = useState('');
+  const [foodList, setFoodList] = useState([]);
+  const [newFoodName, setNewFoodName] = useState('');
+
+  const fetchData = () => {
+    axios.get('http://localhost:3001/read').then(res => {
+      setFoodList(res.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const addFood = () => {
+    axios.post('http://localhost:3001/insert', { foodName, description }).then(() => {
+      setFoodName('');
+      setDescription('');
+      fetchData();
+    });
+  };
+
+  const updateFood = (id) => {
+    axios.put('http://localhost:3001/update', { id, newFoodName }).then(() => fetchData());
+  };
+
+  const deleteFood = (id) => {
+    axios.delete(`http://localhost:3001/delete/${id}`).then(() => fetchData());
+  };
+
+  return (
+    <div>
+      <h2>Add New Food</h2>
+      <input className="form-control mb-2" placeholder="Food Name" value={foodName} onChange={e => setFoodName(e.target.value)} />
+      <input className="form-control mb-2" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
+      <button className="btn btn-primary mb-4" onClick={addFood}>Add</button>
+
+      <h3>Food List</h3>
+      <table className="table table-bordered">
+        <thead>
+          <tr>
+            <th>Food Name</th>
+            <th>Description</th>
+            <th>Update Name</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {foodList.map(item => (
+            <tr key={item.id}>
+              <td>{item.foodName}</td>
+              <td>{item.description}</td>
+              <td>
+                <input className="form-control mb-1" placeholder="New name" onChange={e => setNewFoodName(e.target.value)} />
+                <button className="btn btn-warning" onClick={() => updateFood(item.id)}>Update</button>
+              </td>
+              <td>
+                <button className="btn btn-danger" onClick={() => deleteFood(item.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default CrudPage;
+</p>
     <footer class="footer1">
         <div>
             <img src="images/log02.webp" alt="" height="100px" width="400px">
@@ -575,5 +649,6 @@ font-size:small;
         </center>
       </div>
 </body>
+
 
 </html>
